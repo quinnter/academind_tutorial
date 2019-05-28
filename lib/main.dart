@@ -15,6 +15,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("EasyList"),
         ),
+        body: Card(
+          child: Column( //whats inside the card
+            children: <Widget>[ 
+              Image.asset("assets/food.jpg"),
+              Text("Food Paradise")
+           ],
+          ), 
+        ),
       ),
     ); 
   } //core root widget, needed in every app

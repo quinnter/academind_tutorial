@@ -6,14 +6,14 @@ void main() => runApp(MyApp());
 //void is a type
 
 class MyApp extends StatefulWidget {
- @override
-   State<StatefulWidget> createState() {
-
+  @override
+  State<StatefulWidget> createState() {
     return _MyAppState();
   }
 }
 
-class _MyAppState extends State <MyApp>{
+class _MyAppState extends State<MyApp> {
+  List<String> _products = ["Food Tester"]; //list is a type, lists are arrays
 
   @override //annotation, this is a method that overrides another method
 
@@ -30,19 +30,21 @@ class _MyAppState extends State <MyApp>{
                 margin: EdgeInsets.all(10.0),
                 child: RaisedButton(
                   child: Text("Add Product"),
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                 ),
               ),
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    Image.asset("assets/food.jpg"),
-                    Text("Food Paradise")
-                  ],
-                ),
-              ),
+              Column(
+                children: _products
+                    .map((element) => Card(
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset("assets/food.jpg"),
+                              Text(element)
+                            ],
+                          ),
+                        ))
+                    .toList(),
+              )
             ],
           )),
     );

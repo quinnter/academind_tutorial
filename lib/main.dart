@@ -6,6 +6,11 @@ main() {
 
 class MyApp extends StatelessWidget {
   build(context) {
-    return MaterialApp(); //this is the constructor
+    return MaterialApp(
+      home: Scaffold(appBar: AppBar(
+        title: Text("EasyList"),
+        ),
+      ),
+    ); 
   } //core root widget, needed in every app
 }

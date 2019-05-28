@@ -5,7 +5,16 @@ void main() => runApp(MyApp());
 //void this method returns nothing
 //void is a type
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+ @override
+   State<StatefulWidget> createState() {
+
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State <MyApp>{
+
   @override //annotation, this is a method that overrides another method
 
   Widget build(BuildContext context) {
@@ -21,7 +30,9 @@ class MyApp extends StatelessWidget {
                 margin: EdgeInsets.all(10.0),
                 child: RaisedButton(
                   child: Text("Add Product"),
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                 ),
               ),
               Card(
